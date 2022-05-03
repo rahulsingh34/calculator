@@ -27,7 +27,7 @@ html, body {
 	background-color: var(--midgrey);
 	border: black 3px solid;
 	border-radius: 20px;
-	padding: 2.5px;
+	padding: 10px;
 }
 
 #display {
