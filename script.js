@@ -21,3 +21,14 @@ function divide(a, b) {
 function operate(operator, a, b) {
 	return operator(a, b)
 }
+
+const mainDisplay = document.getElementById("bottom");
+const buttons = document.querySelectorAll('.btn');
+
+mainDisplayValue = [];
+
+buttons.forEach((button) => {
+	button.addEventListener('click', () => {
+		mainDisplayValue.push(button.innerText);
+	});
+});

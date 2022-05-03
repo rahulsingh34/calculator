@@ -65,7 +65,7 @@ html, body {
 	padding-right: 2.5px;
 }
 
-#clear-delete > .btn {
+#clear-delete > .btn-s {
 	background-color: var(--blue);
 }
 
@@ -76,7 +76,7 @@ html, body {
 	padding: 2.5px;
 }
 
-.btn {
+.btn, .btn-s {
 	margin: 2.5px;
 	display: flex;
 	align-items: center;
@@ -87,6 +87,6 @@ html, body {
 	border: black 2px solid;
 }
 
-.btn:hover {
+.btn:hover, .btn-s:hover{
 	opacity: 70%;
 }
