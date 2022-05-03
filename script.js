@@ -30,5 +30,6 @@ mainDisplayValue = [];
 buttons.forEach((button) => {
 	button.addEventListener('click', () => {
 		mainDisplayValue.push(button.innerText);
+		mainDisplay.innerText = mainDisplayValue;
 	});
 });
