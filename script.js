@@ -19,7 +19,18 @@ function divide(a, b) {
 }
 
 function operate(operator, a, b) {
-	return operator(a, b)
+	if(operator == '+') {
+		return add(a, b);
+	}
+	else if (operator == '-') {
+		return subtract(a, b);
+	}
+	else if (operator == '×') {
+		return multiply(a, b);
+	}
+	else if (operator == '÷'){s
+		return divide(a, b);
+	}
 }
 
 let number1 = '';
@@ -43,6 +54,7 @@ buttons.forEach((button) => {
 		else if (operation != '') {
 			mainDisplayValue2.push(button.innerText);
 			mainDisplay.innerText = mainDisplayValue2.slice(0,10).join('');
+			number2 = mainDisplayValue2.slice(0,10).join('');
 		}
 	});
 });
@@ -63,25 +75,17 @@ actions.forEach((action) => {
 			topDisplayValue[1] = operation;
 			topDisplay.innerText = topDisplayValue.join(' ');
 		}	
-		//STILL NEED TO COLLECT NUMBER2
-		else if (operation != '' && number2 != '') {
-			number3 = operate(performOperation, number1, number2);
+		else if (number2 != '') {
+			topDisplayValue[2] = number2;
+			topDisplay.innerText = topDisplayValue.join(' ') + ' = ';
+			number3 = operate(topDisplayValue[1], parseFloat(number1), parseFloat(number2));
+			mainDisplay.innerText = number3;
+			number1 = number3;
+			number2 = '';
+			operation = '';
+			topDisplayValue.length = 0;
+			mainDisplayValue1.length = 0;
+			mainDisplayValue2.length = 0;
 		}
 	});
 });
-
-
-function performOperation(operator) {
-	if(operator == '+') {
-		return add;
-	}
-	else if (operator == '-') {
-		return subtract;
-	}
-	else if (operator == '&times') {
-		return multiply;
-	}
-	else if (operator == '&#247') {
-		return divide;
-	}
-}
