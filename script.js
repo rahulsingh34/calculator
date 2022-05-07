@@ -63,6 +63,7 @@ actions.forEach((action) => {
 			topDisplayValue[1] = operation;
 			topDisplay.innerText = topDisplayValue.join(' ');
 		}	
+		//STILL NEED TO COLLECT NUMBER2
 		else if (operation != '' && number2 != '') {
 			number3 = operate(performOperation, number1, number2);
 		}
