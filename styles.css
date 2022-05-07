@@ -38,6 +38,8 @@ html, body {
 	margin: 15px 5px 15px 5px;
 	border-radius: 10px;
 	border: black solid 2.5px;
+	background-color: var(--lightgrey);
+	color: black;
 }
 
 #top {
@@ -76,7 +78,7 @@ html, body {
 	padding: 2.5px;
 }
 
-.btn, .btn-s {
+.btn, .btn-s, .btn-o{
 	margin: 2.5px;
 	display: flex;
 	align-items: center;
@@ -87,6 +89,6 @@ html, body {
 	border: black 2px solid;
 }
 
-.btn:hover, .btn-s:hover{
+.btn:hover, .btn-s:hover, .btn-o:hover{
 	opacity: 70%;
 }
