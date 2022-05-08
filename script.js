@@ -94,22 +94,32 @@ actions.forEach((action) => {
 				topDisplayValue[1] = operation;
 				topDisplayValue[2] = number2;
 			}
-			number3 = operate(topDisplayValue[1], number1, number2);
-			number3 = Math.round(number3 * 100) / 100;
 			if (topDisplayValue.length == 3) {
 				topDisplay.innerText = topDisplayValue.join(' ') + ' = ';
+				number3 = operate(topDisplayValue[1], number1, number2);
+				number3 = Math.round(number3 * 100) / 100;
+				mainDisplay.innerText = number3;
+				number1 = number3;
+				number2 = '';
+				number3 = '';
+				operation = '';
+				topDisplayValue.length = 0;
+				mainDisplayValue1.length = 0;
+				mainDisplayValue2.length = 0;
 			}
 			else if (topDisplayValue.length == 2 && number2 == 0) {
 				topDisplay.innerText = topDisplayValue.join(' ') + ' 0 ' + ' = ';
+				number3 = operate(topDisplayValue[1], number1, number2);
+				number3 = Math.round(number3 * 100) / 100;
+				mainDisplay.innerText = number3;
+				number1 = number3;
+				number2 = '';
+				number3 = '';
+				operation = '';
+				topDisplayValue.length = 0;
+				mainDisplayValue1.length = 0;
+				mainDisplayValue2.length = 0;
 			}
-			mainDisplay.innerText = number3;
-			number1 = number3;
-			number2 = '';
-			number3 = '';
-			operation = '';
-			topDisplayValue.length = 0;
-			mainDisplayValue1.length = 0;
-			mainDisplayValue2.length = 0;
 		}
 	});
 });
