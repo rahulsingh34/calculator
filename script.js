@@ -153,3 +153,17 @@ topButtons.forEach((tBtn) => {
 		}
 	})
 });
+
+setInterval(decimal, 100);
+
+const decimalBtn = document.getElementById('decimal');
+
+function decimal() {
+	decimalBtn.style.pointerEvents = 'auto';
+	if (operation == '' && mainDisplayValue1.includes('.')) {
+			decimalBtn.style.pointerEvents = 'none';
+	}
+	else if (operation != '' && mainDisplayValue2.includes('.')) {
+			decimalBtn.style.pointerEvents = 'none';
+	}
+}
