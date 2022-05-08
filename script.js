@@ -77,6 +77,7 @@ actions.forEach((action) => {
 		}	
 		else if (number2 != '' && action.innerText != '=') {
 			number3 = operate(action.innerText, number1, number2);
+			number3 = Math.round(number3 * 100) / 100;
 			topDisplay.innerText = number3 + ' ' + action.innerText;
 			mainDisplay.innerText = number3;
 			number1 = number3;
@@ -93,12 +94,12 @@ actions.forEach((action) => {
 				topDisplayValue[1] = operation;
 				topDisplayValue[2] = number2;
 			}
+			number3 = operate(topDisplayValue[1], number1, number2);
+			number3 = Math.round(number3 * 100) / 100;
 			if (topDisplayValue.length == 3) {
-				number3 = operate(topDisplayValue[1], number1, number2);
 				topDisplay.innerText = topDisplayValue.join(' ') + ' = ';
 			}
 			else if (topDisplayValue.length == 2 && number2 == 0) {
-				number3 = operate(topDisplayValue[1], number1, number2);
 				topDisplay.innerText = topDisplayValue.join(' ') + ' 0 ' + ' = ';
 			}
 			mainDisplay.innerText = number3;
