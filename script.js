@@ -93,7 +93,7 @@ actions.forEach((action) => {
 				topDisplayValue[1] = operation;
 				topDisplayValue[2] = number2;
 			}
-			if (topDisplayValue.length == 3) {
+			if (topDisplayValue.length >= 2) {
 				number3 = operate(topDisplayValue[1], number1, number2);
 				topDisplay.innerText = topDisplayValue.join(' ') + ' = ';
 				mainDisplay.innerText = number3;
