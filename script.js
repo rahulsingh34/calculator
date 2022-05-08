@@ -48,7 +48,7 @@ buttons.forEach((button) => {
 	button.addEventListener('click', () => {
 		mainDisplayValue1.push(button.innerText);
 		mainDisplay.innerText = mainDisplayValue1.slice(0,10).join('');
-		if (operation == '' && operation == 0) {
+		if (operation == '') {
 			number1 = parseFloat(mainDisplayValue1.slice(0,10).join(''));
 		}
 		else if (operation != '') {
@@ -88,11 +88,12 @@ actions.forEach((action) => {
 			mainDisplayValue2.length = 0;
 		}
 		else if (action.innerText = '=') {
-			if (number1 != '' && number2 != '') {
+			if (number2 != '') {
 				topDisplayValue[0] = number1;
 				topDisplayValue[1] = operation;
 				topDisplayValue[2] = number2;
 			}
+			if (topDisplayValue.length == 3) {
 				number3 = operate(topDisplayValue[1], number1, number2);
 				topDisplay.innerText = topDisplayValue.join(' ') + ' = ';
 				mainDisplay.innerText = number3;
@@ -104,5 +105,36 @@ actions.forEach((action) => {
 				mainDisplayValue1.length = 0;
 				mainDisplayValue2.length = 0;
 			}
+			}
 	});
+});
+
+const topButtons = document.querySelectorAll('.btn-s');
+
+topButtons.forEach((tBtn) => {
+	tBtn.addEventListener('click', () => {
+		if (tBtn.innerText == 'CLEAR') {
+			number1 = 0;
+			number2 = '';
+			number3 = '';
+			operation = '';
+			topDisplayValue.length = 0;
+			mainDisplayValue1.length = 0;
+			mainDisplayValue2.length = 0;
+			topDisplay.innerText = '';
+			mainDisplay.innerText = 0;
+		}
+		else {
+			if (operation == '') {
+				mainDisplayValue1.pop();
+				mainDisplay.innerText = mainDisplayValue1.slice(0,10).join('');
+				number1 = mainDisplayValue1.slice(0,10).join('');
+			}
+			else if (operation != '') {
+				mainDisplayValue2.pop();
+				mainDisplay.innerText = mainDisplayValue2.slice(0,10).join('');
+				number2 = mainDisplayValue2.slice(0,10).join('');
+			}
+		}
+	})
 });
